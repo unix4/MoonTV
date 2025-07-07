@@ -9,5 +9,32 @@
         }
       ]
     }
+  ],
+
+
+    {
+      "source": "/_astro/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, immutable, max-age=31536000" },
+        { "key": "Vercel-CDN-Cache-Control", "value": "max-age=31536000" }
+      ]
+    },
+
+ 
+    {
+      "source": "/(.*\\.(?:css|js|png|jpg|jpeg|gif|svg|webp|ico|woff2?))",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, immutable, max-age=31536000" },
+        { "key": "Vercel-CDN-Cache-Control", "value": "max-age=31536000" }
+      ]
+    },
+
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, s-maxage=86400, max-age=0, must-revalidate" },
+        { "key": "Vercel-CDN-Cache-Control", "value": "max-age=3600" }
+      ]
+    }
   ]
 }
